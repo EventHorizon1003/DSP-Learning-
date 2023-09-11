@@ -36,5 +36,20 @@ def rectangular_wave(A,fs,T):
     # T is duration pulse in seconds
     t = np.arange(-0.5,0.5,1/fs)
     rect = (t > -T/2) * (t < T/2) + 0.5*(t==T/2) + 0.5*(t==-T/2)
+    # In python, True*True = 1
+    #            True*False = 0
+    #            False*False = 0
     g = A*rect
     return(t,g)
+
+def gaussian_pulse(fs, sigma):
+    t = np.arange(-0.5,0.5,1/fs)
+    g = 1/(np.sqrt(2*np.pi*sigma))*np.exp(-t**2/(2*sigma**2))
+    return(t,g)
+
+def chirp(t_start,t_stop,fs,f0,t0,phi,mode_1):
+    from scipy import signal
+    t = np.arange(t_start,t_stop,1/fs)
+    g = signal.chirp(t,f0,t0,phi,mode_1)
+    return (t,g)
+

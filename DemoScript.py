@@ -34,6 +34,27 @@ def demo_rectangular():
     plt.plot(t,g)
     plt.show()
 
-demo_rectangular()
+def demo_gaussian():
+    fs = 80
+    sigma = 0.1
+    (t,g) = SignalGen.gaussian_pulse(fs,sigma)
+    plt.plot(t,g)
+    plt.show()
+
+def demo_chirp():
+    t_start = 0
+    t_stop = 1
+    fs = 500
+    f1 = 20
+    t1 = 0.2
+    phi = 0
+    mode_1 = "linear"
+    [t,g] = SignalGen.chirp(t_start,t_stop,fs,f1,t1,phi,mode_1)
+    plt.plot(t,g)
+    plt.show()
+
+#demo_rectangular()
 #demo()
 #demo_square()
+#demo_gaussian()
+demo_chirp()

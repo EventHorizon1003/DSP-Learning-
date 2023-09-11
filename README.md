@@ -20,3 +20,26 @@
    - A: Amplitude of the rectangular wave
    - fs: Sampling frequency (Hz)
    - T: width of rectangular wave(s)
+      - True*True = 1
+      - True*False = 0
+      - False*True = 0
+      - False*False = 0
+## gaussian_pulse(fs,sigma)
+   - used in GFSK which is one type of FSK
+   - The impulse response is Gaussian distribution
+   - Gaussian give no overshoot with minimal rise & fall time
+   - it have minimum group delay 
+   - The sigma to produce gaussian distribution is 0.1
+   - fs: Sampling frequency (Hz)
+   - sigma: gaussian coefficient
+
+## scipy.signal.chirp(t,f0,t1,f1,phi,method="linear")
+   - t is list of time 
+   - f0 is initial frequency
+   - t1 is stating time for vary frequency 
+   - phi is initial phase 
+   - method = "linear" change the frequency of the signal linearly 
+     - A signal with time-varying frequency is called
+       chirp 
+     - up-chirp (from low to high frequency)
+     - low-chirp (from high to low frequency)
