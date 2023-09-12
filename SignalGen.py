@@ -41,7 +41,6 @@ def rectangular_wave(A,fs,T):
     #            False*False = 0
     g = A*rect
     return(t,g)
-
 def gaussian_pulse(fs, sigma):
     t = np.arange(-0.5,0.5,1/fs)
     g = 1/(np.sqrt(2*np.pi*sigma))*np.exp(-t**2/(2*sigma**2))
