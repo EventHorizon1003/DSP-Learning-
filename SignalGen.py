@@ -51,4 +51,3 @@ def chirp(t_start,t_stop,fs,f0,t0,phi,mode_1):
     t = np.arange(t_start,t_stop,1/fs)
     g = signal.chirp(t,f0,t0,phi,mode_1)
     return (t,g)
-

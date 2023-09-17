@@ -1,3 +1,4 @@
+from __future__ import print_function
 import SignalGen
 import numpy as np
 import matplotlib.pyplot as plt
@@ -53,8 +54,22 @@ def demo_chirp():
     plt.plot(t,g)
     plt.show()
 
+
+from ipywidgets import interact, interactive, fixed, interact_manual
+import ipywidgets as widgets
+import matplotlib.pyplot as plt, random
+
+def series(dots, colr):
+    a,b=[],[]
+    for i in range(dots):
+        a.append(random.randint(1,100))
+        b.append(random.randint(1,100))
+    plt.plot(a,b, c=colr)
+    return()
+interact(series, dots=(1,100,1), colr=["red","orange","brown"]);
+
 #demo_rectangular()
-#demo()
+#demo()`
 #demo_square()
 #demo_gaussian()
-demo_chirp()
+#demo_chirp()
